@@ -1,0 +1,27 @@
+<br/>
+<br/>
+
+<form class="form-inline">
+  <div class="form-group mx-sm-3 mb-2">
+    <input type="text" class="form-control" [(ngModel)]="nome" id="nome" name="nome" placeholder="Pesquisa por Nome">
+  </div>
+  <button type="submit" (click)="consultarUser()" class="btn btn-primary mb-2">Buscar</button>
+</form>
+
+<br/>
+<br/>
+<table class="table">
+	<thead class="thread-dark">
+		<th scope="col">ID</th>
+		<th scope="col">Nome</th>
+		<th scope="col">CPF</th>
+	</thead>
+	<tbody>
+		<tr *ngFor="let student of students">
+			<td>{{student.id}}</td>
+			<td>{{student.nome}}</td>
+			<td>{{student.cpf}}</td>
+			<td><button (click)="deleteUsuario(student.id)" class="btn-btn-primary">Delete</button></td>
+		</tr>
+	</tbody>
+</table>
